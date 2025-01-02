@@ -2,7 +2,7 @@ trigger:
 - Modulation1
 
 pool:
-  vmImage: 'Azure Pipelines'
+  name: 'Azure Pipelines'
 
 steps:
 - task: AzureCLI@2
