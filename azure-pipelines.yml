@@ -3,7 +3,7 @@ trigger:
 
 pool:
   name: 'Azure Pipelines'
-  vmImage: 'Hosted Agent'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: AzureCLI@2
