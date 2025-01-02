@@ -3,6 +3,7 @@ trigger:
 
 pool:
   name: 'Azure Pipelines'
+  vmImage: 'Hosted Image'
 
 steps:
 - task: AzureCLI@2
