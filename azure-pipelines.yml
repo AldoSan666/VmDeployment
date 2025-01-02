@@ -1,0 +1,30 @@
+trigger:
+- Modulation1
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '<5e742b59-0275-41a0-90ff-8c051886db67>'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az group create --name devops-rg --location <Your Location>
+  displayName: 'Create Resource Group'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '<5e742b59-0275-41a0-90ff-8c051886db67>'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az deployment group create \
+        --resource-group devops-rg \
+        --template-file main.bicep \
+        --parameters vmName=$(vmName) \
+                     vmSize=$(vmSize) \
+                     adminUsername=$(azureadmin) \
+                     adminPassword=$(Azureadmin123!)
+  displayName: 'Bicep Template for RG and VM Creation'
