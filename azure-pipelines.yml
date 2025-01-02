@@ -1,5 +1,5 @@
 trigger:
-- Modulation1
+- main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -11,7 +11,7 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az group create --name devops-rg --location <Your Location>
+      az group create --name devops-rg --location eastus
   displayName: 'Create Resource Group'
 
 - task: AzureCLI@2
