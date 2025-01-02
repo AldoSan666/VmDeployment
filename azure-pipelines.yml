@@ -2,12 +2,12 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: 'Azure Pipelines'
 
 steps:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: '<5e742b59-0275-41a0-90ff-8c051886db67>'
+    azureSubscription: '5e742b59-0275-41a0-90ff-8c051886db67'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -16,7 +16,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: '<5e742b59-0275-41a0-90ff-8c051886db67>'
+    azureSubscription: '5e742b59-0275-41a0-90ff-8c051886db67'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
