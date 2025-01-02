@@ -2,8 +2,7 @@ trigger:
 - Modulation1
 
 pool:
-  name: 'Azure Pipelines'
-  vmImage: 'windows-latest'
+  name: 'SHPool'
   
 steps:
 - task: AzureCLI@2
