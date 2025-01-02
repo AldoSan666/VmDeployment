@@ -2,7 +2,7 @@ trigger:
 - Modulation1
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'MySelfHostedPool'
 
 steps:
 - task: AzureCLI@2
