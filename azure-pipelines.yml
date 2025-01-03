@@ -1,13 +1,14 @@
+
 trigger:
-- main
+- Modulation1
 
 pool:
-  name: 'Azure Pipelines'
-
+  name: 'SHPool'
+  
 steps:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: '5e742b59-0275-41a0-90ff-8c051886db67'
+    azureSubscription: 'b03f4983-8981-4edb-bc3c-9aeb5eaa9d56'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
@@ -16,7 +17,7 @@ steps:
 
 - task: AzureCLI@2
   inputs:
-    azureSubscription: '5e742b59-0275-41a0-90ff-8c051886db67'
+    azureSubscription: 'b03f4983-8981-4edb-bc3c-9aeb5eaa9d56'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
