@@ -1,0 +1,30 @@
+trigger:
+- Modulation1
+
+pool:
+  name: 'SHPool'
+  
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'b03f4983-8981-4edb-bc3c-9aeb5eaa9d56'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az group create --name devops-rg --location eastus
+  displayName: 'Create Resource Group'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'b03f4983-8981-4edb-bc3c-9aeb5eaa9d56'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az deployment group create \
+        --resource-group devops-rg \
+        --template-file main.bicep \
+        --parameters vmName=$(vmName) \
+                     vmSize=$(vmSize) \
+                     adminUsername=$(azureadmin) \
+                     adminPassword=$(Azureadmin123!)
+  displayName: 'Bicep Template for RG and VM Creation'
